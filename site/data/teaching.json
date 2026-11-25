@@ -1,0 +1,44 @@
+[
+  {
+    "title": "Data Visualization for Life Science",
+    "where": "Uppsala University, Department of Medical Cell Biology",
+    "when": "2021 — now",
+    "role": "Course leader · guest lecturer",
+    "format": "PhD course · 1.5 ECTS · one week, online",
+    "topic": "viz",
+    "url": "https://media.medfarm.uu.se/kurser/course_view.php?id=1421",
+    "summary": "A yearly course for PhD students and researchers on visualization principles, choosing chart types, colour, misleading charts and multivariate data, taught hands-on in open-source R and Python. Participants make their own COVID-19 visualization and prepare figures for publication, presentation or science communication. Guest teachers come from SciLifeLab, the Broad Institute, Science magazine and elsewhere."
+  },
+  {
+    "title": "Practical aspects of visualizing research results",
+    "original": "Praktični vidiki vizualizacije raziskovalnih rezultatov",
+    "where": "University of Ljubljana, Faculty of Social Sciences",
+    "when": "2025 · two editions",
+    "role": "Lecturer",
+    "format": "Micro-credential training (ULTRA project) · lectures + group work",
+    "topic": "viz",
+    "url": "https://www.uni-lj.si/novice/2025-05-12-usposabljanje-o-vizualizaciji-podatkov-kako-jasno-predstaviti-raziskovalne-rezultate",
+    "summary": "Training for students and researchers on presenting research results clearly: showing the full spread of the data, matching chart type to data, guiding the reader's attention, accessible colour and avoiding chart junk. Groups designed visualizations for real datasets, weighing audience, message and ethical dilemmas."
+  },
+  {
+    "title": "Ethical aspects and responsible use of artificial intelligence",
+    "original": "Etični vidiki in odgovorna uporaba umetne inteligence",
+    "where": "Administration Academy (Upravna akademija), Ministry of Public Administration",
+    "when": "2025 — now",
+    "role": "Trainer, with T. Zdolšek Draksler and M. Kovačič",
+    "format": "Training for public servants · 3 hours, online",
+    "topic": "ai",
+    "url": "https://ua.gov.si/aktivnosti/detajli/?ID=fc5838b7-cea6-f111-abd0-005056817c25&Tag=459,581",
+    "summary": "What AI is and how the public sector uses it, ethical principles illustrated with real cases where they were broken, bias in AI systems, and how to assess ethical risks before introducing an AI solution.",
+    "editions": ["Nov 2025: AI in the public sector: ethical challenges and responsible use", "Jan 2026: Legal aspects of using AI in the public sector", "Nov 2026: Ethical aspects and responsible use of AI"]
+  },
+  {
+    "title": "Trustworthy and Democratic AI",
+    "where": "Open online courses, OpenLearn Create (The Open University)",
+    "when": "2024 — 2025",
+    "role": "Co-author, with T. Zdolšek Draksler, A. Fabjan and M. Kovačič",
+    "format": "Self-paced MOOC · three modules · English, Slovene, Spanish",
+    "topic": "ai",
+    "summary": "Three modules (fundamentals, responsible AI development, and creating awareness and change) on AI bias, data and democratic values. Developed in the AI4Gov project."
+  }
+]

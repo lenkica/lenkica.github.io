@@ -1,0 +1,104 @@
+﻿[
+    {
+        "year":  "2019",
+        "type":  "journal-article",
+        "doi":  "10.7554/eLife.41711",
+        "title":  "Fusion pore regulation by cAMP/Epac2 controls cargo release during insulin exocytosis"
+    },
+    {
+        "year":  "2018",
+        "type":  "other",
+        "doi":  "10.1101/403253",
+        "title":  "Fusion pore regulation by Epac2/cAMP controls cargo release during insulin exocytosis"
+    },
+    {
+        "year":  "2017",
+        "type":  "journal-article",
+        "doi":  "10.1002/jnr.24051",
+        "title":  "Astrocytic Vesicle-based Exocytosis in Cultures and Acutely Isolated Hippocampal Rodent Slices."
+    },
+    {
+        "year":  "2016",
+        "type":  "journal-article",
+        "doi":  "10.1007/s00018-016-2213-2",
+        "title":  "Dominant negative SNARE peptides stabilize the fusion pore in a narrow, release-unproductive state."
+    },
+    {
+        "year":  "2016",
+        "type":  "journal-article",
+        "doi":  "10.2337/dbi16-0019",
+        "title":  "How Kiss-and-Run Can Make Us Sick: SOX4 Puts a Break on the Pore."
+    },
+    {
+        "year":  "2016",
+        "type":  "journal-article",
+        "doi":  "10.1016/j.chembiol.2016.06.009",
+        "title":  "Plasma Membrane Phosphatidylinositol 4,5-Bisphosphate Regulates Ca(2+)-Influx and Insulin Secretion from Pancreatic β Cells."
+    },
+    {
+        "year":  "2015",
+        "type":  "journal-article",
+        "doi":  null,
+        "title":  "Astrocytic gliotransmitter vesicles and their interaction with the plasmalemma"
+    },
+    {
+        "year":  "2015",
+        "type":  "journal-article",
+        "doi":  null,
+        "title":  "Fusion Properties of Gliotransmitter Vesicles in Cultured Astrocytes"
+    },
+    {
+        "year":  "2015",
+        "type":  "journal-article",
+        "doi":  "10.1080/19336950.2015.1007825",
+        "title":  "Local electrostatic interactions determine the diameter of fusion pores."
+    },
+    {
+        "year":  "2014",
+        "type":  "journal-article",
+        "doi":  "10.1523/JNEUROSCI.5290-13.2014",
+        "title":  "Hyperpolarization-Activated Cyclic Nucleotide-Gated Channels and cAMP-Dependent Modulation of Exocytosis in Cultured Rat Lactotrophs."
+    },
+    {
+        "year":  "2014",
+        "type":  "journal-article",
+        "doi":  null,
+        "title":  "Exocytotic Fusion Pore Intermediates of Dense-Core Vesicles"
+    },
+    {
+        "year":  "2014",
+        "type":  "journal-article",
+        "doi":  null,
+        "title":  "Fusion Properties of Gliotransmitter Vesicles in Astrocytes"
+    },
+    {
+        "year":  "2013",
+        "type":  "journal-article",
+        "doi":  "10.1038/nprot.2013.069",
+        "title":  "High-resolution membrane capacitance measurements for the study of exocytosis and endocytosis."
+    },
+    {
+        "year":  "2013",
+        "type":  "journal-article",
+        "doi":  "10.3389/fncel.2013.00033",
+        "title":  "Comparison of unitary exocytic events in pituitary lactotrophs and in astrocytes: modeling the discrete open fusion-pore states."
+    },
+    {
+        "year":  "2013",
+        "type":  "journal-article",
+        "doi":  null,
+        "title":  "HIGH-RESOLUTION ELECTROPHYSIOLOGICAL DETERMINATION OF UNITARY EXOCYTIC EVENTS IN CULTURED ASTROCYTES"
+    },
+    {
+        "year":  "2012",
+        "type":  "journal-article",
+        "doi":  "10.1007/s11064-012-0773-6",
+        "title":  "Exocytosis in astrocytes: transmitter release and membrane signal regulation."
+    },
+    {
+        "year":  "2012",
+        "type":  "journal-article",
+        "doi":  "10.1016/j.ceca.2012.05.009",
+        "title":  "Cholesterol and regulated exocytosis: a requirement for unitary exocytotic events."
+    }
+]

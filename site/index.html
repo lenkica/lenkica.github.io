@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alenka Guček — cell biology · data visualization · AI</title>
+<meta name="description" content="Researcher at the Jožef Stefan Institute working where cell biology, data visualization and AI meet.">
+<link rel="stylesheet" href="css/style.css?v=8">
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="index.html">Alenka Guček</a>
+  <a class="link" href="index.html" aria-current="page">Home</a>
+  <a class="link" href="projects.html">Projects</a>
+  <a class="link" href="publications.html">Publications</a>
+  <a class="link" href="teaching.html">Teaching</a>
+  <button id="theme" type="button">Dark</button>
+</div></header>
+
+<main class="wrap">
+  <section class="hero">
+    <div>
+      <h1>Alenka Guček.</h1>
+      <p class="lede">I started out watching single vesicles fuse with the cell membrane, and now work on <b>trustworthy AI</b> and <b>data visualization</b> at the Artificial Intelligence Laboratory, Jožef Stefan Institute. I am also a guest lecturer at <b>Uppsala University</b>, where I lead a PhD course on data visualization for life science. My work sits where <b>cell biology</b>, <b>data visualization</b> and <b>AI</b> meet.</p>
+      <div class="links">
+        <a href="https://scholar.google.com/citations?user=tJEwAjEAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+        <a href="https://www.researchgate.net/profile/Alenka-Gucek-2" target="_blank" rel="noopener">ResearchGate</a>
+        <a href="https://www.linkedin.com/in/alenkagucek/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://orcid.org/0000-0003-4453-1498" target="_blank" rel="noopener">ORCID</a>
+        <a href="https://bib.cobiss.net/bibliographies/si/webBiblio/bib201_20261125_204723_34319.html" target="_blank" rel="noopener">COBISS</a>
+        <a href="mailto:alenka.gucek@ijs.si">alenka.gucek@ijs.si</a>
+      </div>
+    </div>
+    <figure>
+      <img src="imgs/profile.webp" alt="Alenka Guček sitting on a park bench">
+      <figcaption>Photo: Jože Suhadolnik / Delo</figcaption>
+    </figure>
+  </section>
+
+  <div class="map-card">
+    <div class="map-head">
+      <div>
+        <h2>Where my work sits</h2>
+        <p>The coloured clouds are about 4,400 papers from three fields, placed by what their abstracts say, so similar papers sit together. The dots are my own papers, talks and reports. Hover over a theme to see which outputs belong to it.</p>
+      </div>
+      <div class="controls">
+        <button type="button" data-filter="all" aria-pressed="true">All outputs</button>
+        <button type="button" data-filter="papers" aria-pressed="false">Papers only</button>
+        <button type="button" id="play">▶ Play 2011 → today</button>
+      </div>
+    </div>
+    <div class="legend">
+      <span><i style="background:var(--f-cell)"></i>Cell biology</span>
+      <span><i style="background:var(--f-viz)"></i>Data visualization</span>
+      <span><i style="background:var(--f-ai)"></i>Artificial intelligence</span>
+      <span><i class="me"></i>My work</span>
+    </div>
+    <div class="map-stage" id="map">
+      <canvas aria-hidden="true"></canvas>
+      <svg role="img" aria-label="Scatter map of research papers; my outputs are highlighted"></svg>
+      <div class="tip" id="tip"></div>
+    </div>
+    <div class="map-foot" id="map-foot"><span></span><a href="publications.html">See the full list →</a></div>
+  </div>
+
+  <section class="block">
+    <div class="three">
+      <div class="pillar" style="--c:var(--f-cell)"><h3>Cell biology</h3><p>A PhD and postdoc on regulated exocytosis: fusion pores in astrocytes and insulin-secreting β-cells, studied with electrophysiology and super-resolution imaging.</p></div>
+      <div class="pillar" style="--c:var(--f-viz)"><h3>Data visualization</h3><p>Turning complex data into clear visual stories: dashboards for rare-disease cohorts, data journalism, workshops and talks on effective scientific figures.</p></div>
+      <div class="pillar" style="--c:var(--f-ai)"><h3>Artificial intelligence</h3><p>Trustworthy and unbiased AI for public governance, AI agents that simulate social-media debates, and AI analytics for water and health.</p></div>
+    </div>
+  </section>
+
+  <nav class="gates" aria-label="More">
+    <a class="gate" href="projects.html"><span class="g-t">Projects</span><span class="g-s" id="g-projects">Current and past research projects</span><span class="g-a">→</span></a>
+    <a class="gate" href="publications.html"><span class="g-t">Publications</span><span class="g-s" id="g-pubs">Journal and conference papers</span><span class="g-a">→</span></a>
+    <a class="gate" href="teaching.html"><span class="g-t">Teaching</span><span class="g-s" id="g-teach">Courses and trainings</span><span class="g-a">→</span></a>
+  </nav>
+</main>
+
+<footer><div class="wrap">
+  <span>© 2026 Alenka Guček · Jožef Stefan Institute, Ljubljana</span>
+  <span><a href="mailto:alenka.gucek@ijs.si">Email</a> · <a href="https://scholar.google.com/citations?user=tJEwAjEAAAAJ" target="_blank" rel="noopener">Google Scholar</a> · <a href="https://www.researchgate.net/profile/Alenka-Gucek-2" target="_blank" rel="noopener">ResearchGate</a> · <a href="https://www.linkedin.com/in/alenkagucek/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://orcid.org/0000-0003-4453-1498" target="_blank" rel="noopener">ORCID</a></span>
+</div></footer>
+<script src="js/site.js?v=8"></script>
+<script src="js/map.js?v=8"></script>
+</body>
+</html>
