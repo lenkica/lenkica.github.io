@@ -38,6 +38,18 @@ The pages load JSON, so they need a small web server rather than a double-clicke
 
 Then open http://localhost:8765.
 
+## Publishing
+
+The site is live at https://lenkica.github.io (repository `lenkica/lenkica.github.io`). Every push to `main` republishes the `site/` folder through `.github/workflows/pages.yml`; it takes about a minute. After editing:
+
+```powershell
+git add -A
+git commit -m "Describe the change"
+git push
+```
+
+(If `git` is not found in an older terminal, open a new one, or use `& "C:\Program Files\Git\cmd\git.exe"`.)
+
 ## How the map is made
 
 - Background: ~1,500 English-language articles (2012–2026) from each of three fields, sampled from OpenAlex with a fixed seed:
