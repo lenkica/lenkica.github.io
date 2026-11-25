@@ -23,9 +23,21 @@ function boldMe(authors) {
   return esc(authors).replace(/Guček A/g, "<em>Guček A</em>");
 }
 
-function pubItem(m, clusters) {
-  const c = clusters && clusters.find((c) => c.id === m.cluster);
-  const dot = c && FIELD_VAR[c.field] ? `<span class="dot" style="background:var(${FIELD_VAR[c.field]})" title="Nearest field on the map"></span>` : "";
+// field of an output = majority field among its 15 nearest background papers on the map
+function nearestField(m, background) {
+  const near = background
+    .map((p) => [(p[0] - m.x) ** 2 + (p[1] - m.y) ** 2, p[2]])
+    .sort((a, b) => a[0] - b[0])
+    .slice(0, 15);
+  const votes = {};
+  for (const [, f] of near) votes[f] = (votes[f] || 0) + 1;
+  return Object.keys(votes).sort((a, b) => votes[b] - votes[a])[0];
+}
+
+const FIELD_LABEL = { cell: "cell biology", viz: "data visualization", ai: "AI" };
+function pubItem(m, background) {
+  const f = background ? nearestField(m, background) : null;
+  const dot = f ? `<span class="dot" style="background:var(${FIELD_VAR[f]})" title="Nearest field on the map: ${FIELD_LABEL[f]}"></span>` : "";
   const links = [
     m.doi ? `<a href="https://doi.org/${esc(m.doi)}" target="_blank" rel="noopener">DOI</a>` : "",
     m.url ? `<a href="${esc(m.url)}" target="_blank" rel="noopener">Link</a>` : "",
@@ -92,10 +104,10 @@ async function renderLists() {
   if (latest || all) {
     const map = await fetch("data/map.json", { cache: "no-cache" }).then((r) => r.json());
     const pubs = [...map.mine].sort((a, b) => b.year - a.year);
-    if (latest) latest.innerHTML = pubs.filter((m) => m.kind === "article").slice(0, 4).map((m) => pubItem(m, map.clusters)).join("");
+    if (latest) latest.innerHTML = pubs.filter((m) => m.kind === "article").slice(0, 4).map((m) => pubItem(m, map.background)).join("");
     if (all) {
       // the publications page lists papers only: journal articles and conference papers
-      all.innerHTML = pubs.filter((m) => m.kind === "article" || m.kind === "conference").map((m) => pubItem(m, map.clusters)).join("");
+      all.innerHTML = pubs.filter((m) => m.kind === "article" || m.kind === "conference").map((m) => pubItem(m, map.background)).join("");
       if (location.hash) document.querySelector(location.hash)?.scrollIntoView();
     }
   }
