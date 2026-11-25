@@ -1,88 +1,120 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Alenka Guček — cell biology · data visualization · AI</title>
 <meta name="description" content="Researcher at the Jožef Stefan Institute working where cell biology, data visualization and AI meet.">
-<link rel="stylesheet" href="css/style.css?v=10">
+<script>try { const t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<link rel="stylesheet" href="css/style.css?v=11">
 </head>
-<body>
+<body class="home">
 <header class="nav"><div class="wrap">
-  <a class="brand" href="index.html">Alenka Guček</a>
-  <a class="link" href="index.html" aria-current="page">Home</a>
-  <a class="link" href="projects.html">Projects</a>
-  <a class="link" href="publications.html">Publications</a>
-  <a class="link" href="teaching.html">Teaching</a>
-  <button id="theme" type="button">Dark</button>
+  <a class="brand" href="index.html"><span class="mono">A·G</span> <span class="name">Alenka Guček</span></a>
+  <nav>
+    <a class="link" href="projects.html">Projects</a>
+    <a class="link" href="publications.html">Publications</a>
+    <a class="link" href="teaching.html">Teaching</a>
+    <button id="theme" type="button">Light</button>
+  </nav>
 </div></header>
 
-<main class="wrap">
-  <section class="hero">
-    <div>
-      <h1>Alenka Guček.</h1>
-      <p class="lede">I started out watching single vesicles fuse with the cell membrane, and now work on <b>trustworthy AI</b> and <b>data visualization</b> at the Artificial Intelligence Laboratory, Jožef Stefan Institute. I am also a guest lecturer at <b>Uppsala University</b>, where I lead a PhD course on data visualization for life science. My work sits where <b>cell biology</b>, <b>data visualization</b> and <b>AI</b> meet.</p>
+<!-- the sky: one fixed stage behind the whole story -->
+<div id="stage" aria-hidden="true">
+  <canvas></canvas>
+</div>
+<div class="tip" id="tip" role="tooltip"></div>
+
+<main id="story">
+  <section class="step hero" data-step="hero">
+    <div class="card">
+      <p class="kicker mono">cell biology × data visualization × AI</p>
+      <h1>Alenka<br>Guček</h1>
+      <p class="lede">I started out watching single vesicles fuse with the cell membrane. Now I work on <b>trustworthy AI</b> and <b>data visualization</b> at the Artificial Intelligence Laboratory, Jožef Stefan Institute, and I am a guest lecturer at <b>Uppsala University</b>.</p>
       <div class="links">
         <a href="https://scholar.google.com/citations?user=tJEwAjEAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
         <a href="https://www.researchgate.net/profile/Alenka-Gucek-2" target="_blank" rel="noopener">ResearchGate</a>
         <a href="https://www.linkedin.com/in/alenkagucek/" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://orcid.org/0000-0003-4453-1498" target="_blank" rel="noopener">ORCID</a>
-        <a href="https://bib.cobiss.net/bibliographies/si/webBiblio/bib201_20261125_204723_34319.html" target="_blank" rel="noopener">COBISS</a>
-        <a href="mailto:alenka.gucek@ijs.si">alenka.gucek@ijs.si</a>
+        <a href="mailto:alenka.gucek@ijs.si">Email</a>
       </div>
+      <figure class="portrait">
+        <img src="imgs/profile.webp" alt="Alenka Guček sitting on a park bench">
+        <figcaption>Photo: Jože Suhadolnik / Delo</figcaption>
+      </figure>
+      <p class="scroll-hint mono">scroll to explore the map ↓</p>
     </div>
-    <figure>
-      <img src="imgs/profile.webp" alt="Alenka Guček sitting on a park bench">
-      <figcaption>Photo: Jože Suhadolnik / Delo</figcaption>
-    </figure>
   </section>
 
-  <div class="map-card">
-    <div class="map-head">
-      <div>
-        <h2>Where my work sits</h2>
-        <p>The coloured clouds are about 4,400 papers from three fields, placed by what their abstracts say, so similar papers sit together. The dots are my own papers, talks and reports. Hover over a theme to see which outputs belong to it.</p>
-      </div>
+  <section class="step" data-step="cell">
+    <div class="card">
+      <p class="kicker mono"><i class="sw" style="background:var(--f-cell)"></i>I · cell biology · 2011–2021</p>
+      <h2>Watching single vesicles fuse</h2>
+      <p>For my PhD at the University of Ljubljana and my postdoc at Uppsala University I recorded single vesicles fusing with the cell membrane. I measured fusion pores in astrocytes and insulin-secreting β-cells with electrophysiology and super-resolution microscopy.</p>
+      <p class="note mono">The bright dots are my 40 outputs from those years. The teal cloud is 1,500 cell-biology papers placed by what their abstracts say.</p>
+    </div>
+  </section>
+
+  <section class="step" data-step="viz">
+    <div class="card">
+      <p class="kicker mono"><i class="sw" style="background:var(--f-viz)"></i>II · data visualization · 2021–</p>
+      <h2>Making data speak</h2>
+      <p>Explaining very specialised results to other people pulled me towards data visualization. I design visual stories for health and rare-disease data, speak and write about effective scientific figures, and lead a PhD course on data visualization for life science at Uppsala University.</p>
+    </div>
+  </section>
+
+  <section class="step" data-step="ai">
+    <div class="card">
+      <p class="kicker mono"><i class="sw" style="background:var(--f-ai)"></i>III · artificial intelligence · 2021–</p>
+      <h2>Trustworthy AI</h2>
+      <p>At the Jožef Stefan Institute's AI Lab I work on trustworthy and unbiased AI for public governance, AI agents that simulate debates on social media, and AI analytics for water and health.</p>
+    </div>
+  </section>
+
+  <section class="step" data-step="all">
+    <div class="card">
+      <p class="kicker mono">IV · the whole map</p>
+      <h2>Where it all meets</h2>
+      <p>About 4,400 papers from the three fields, with my work among them. Hover over a theme to light up its outputs, or over a dot to see what it is.</p>
       <div class="controls">
         <button type="button" data-filter="all" aria-pressed="true">All outputs</button>
         <button type="button" data-filter="papers" aria-pressed="false">Papers only</button>
-        <button type="button" id="play">▶ Play 2011 → today</button>
       </div>
-    </div>
-    <div class="legend">
-      <span><i style="background:var(--f-cell)"></i>Cell biology</span>
-      <span><i style="background:var(--f-viz)"></i>Data visualization</span>
-      <span><i style="background:var(--f-ai)"></i>Artificial intelligence</span>
-      <span><i class="me"></i>My work</span>
-    </div>
-    <div class="map-stage" id="map">
-      <canvas aria-hidden="true"></canvas>
-      <svg role="img" aria-label="Scatter map of research papers; my outputs are highlighted"></svg>
-      <div class="tip" id="tip"></div>
-    </div>
-    <div class="map-foot" id="map-foot"><span></span><a href="publications.html">See the full list →</a></div>
-  </div>
-
-  <section class="block">
-    <div class="three">
-      <div class="pillar" style="--c:var(--f-cell)"><h3>Cell biology</h3><p>A PhD and postdoc on regulated exocytosis: fusion pores in astrocytes and insulin-secreting β-cells, studied with electrophysiology and super-resolution imaging.</p></div>
-      <div class="pillar" style="--c:var(--f-viz)"><h3>Data visualization</h3><p>Turning complex data into clear visual stories: dashboards for rare-disease cohorts, data journalism, workshops and talks on effective scientific figures.</p></div>
-      <div class="pillar" style="--c:var(--f-ai)"><h3>Artificial intelligence</h3><p>Trustworthy and unbiased AI for public governance, AI agents that simulate social-media debates, and AI analytics for water and health.</p></div>
     </div>
   </section>
 
-  <nav class="gates" aria-label="More">
-    <a class="gate" href="projects.html"><span class="g-t">Projects</span><span class="g-s" id="g-projects">Current and past research projects</span><span class="g-a">→</span></a>
-    <a class="gate" href="publications.html"><span class="g-t">Publications</span><span class="g-s" id="g-pubs">Journal and conference papers</span><span class="g-a">→</span></a>
-    <a class="gate" href="teaching.html"><span class="g-t">Teaching</span><span class="g-s" id="g-teach">Courses and trainings</span><span class="g-a">→</span></a>
-  </nav>
+  <section class="step" data-step="timeline">
+    <div class="card">
+      <p class="kicker mono">V · fifteen years</p>
+      <h2>One dot per output</h2>
+      <p>The same dots, now sorted by year and coloured by the field they sit closest to. Teal gives way to coral and violet.</p>
+    </div>
+  </section>
+
+  <section class="step list-step" data-step="list">
+    <div class="card wide">
+      <p class="kicker mono">VI · latest papers</p>
+      <h2>Recent work</h2>
+      <div id="latest-pubs" class="latest"></div>
+      <a class="all-papers" id="all-papers" href="publications.html">All journal and conference papers →</a>
+    </div>
+  </section>
+
+  <section class="after">
+    <nav class="gates" aria-label="More">
+      <a class="gate" href="projects.html"><span class="g-k mono">01</span><span class="g-t">Projects</span><span class="g-s" id="g-projects">Current and past research projects</span></a>
+      <a class="gate" href="publications.html"><span class="g-k mono">02</span><span class="g-t">Publications</span><span class="g-s" id="g-pubs">Journal and conference papers</span></a>
+      <a class="gate" href="teaching.html"><span class="g-k mono">03</span><span class="g-t">Teaching</span><span class="g-s" id="g-teach">Courses and trainings</span></a>
+    </nav>
+    <p class="method mono" id="method"></p>
+  </section>
 </main>
 
 <footer><div class="wrap">
   <span>© 2026 Alenka Guček · Jožef Stefan Institute, Ljubljana</span>
   <span><a href="mailto:alenka.gucek@ijs.si">Email</a> · <a href="https://scholar.google.com/citations?user=tJEwAjEAAAAJ" target="_blank" rel="noopener">Google Scholar</a> · <a href="https://www.researchgate.net/profile/Alenka-Gucek-2" target="_blank" rel="noopener">ResearchGate</a> · <a href="https://www.linkedin.com/in/alenkagucek/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://orcid.org/0000-0003-4453-1498" target="_blank" rel="noopener">ORCID</a></span>
 </div></footer>
-<script src="js/site.js?v=10"></script>
-<script src="js/map.js?v=10"></script>
+<script src="js/site.js?v=11"></script>
+<script src="js/story.js?v=11"></script>
 </body>
 </html>

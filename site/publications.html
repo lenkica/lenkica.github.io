@@ -1,29 +1,40 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Publications — Alenka Guček</title>
-<link rel="stylesheet" href="css/style.css?v=10">
+<script>try { const t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<link rel="stylesheet" href="css/style.css?v=11">
 </head>
 <body>
 <header class="nav"><div class="wrap">
-  <a class="brand" href="index.html">Alenka Guček</a>
-  <a class="link" href="index.html">Home</a>
-  <a class="link" href="projects.html">Projects</a>
-  <a class="link" href="publications.html" aria-current="page">Publications</a>
-  <a class="link" href="teaching.html">Teaching</a>
-  <button id="theme" type="button">Dark</button>
+  <a class="brand" href="index.html"><span class="mono">A·G</span> <span class="name">Alenka Guček</span></a>
+  <nav>
+    <a class="link" href="projects.html">Projects</a>
+    <a class="link" href="publications.html" aria-current="page">Publications</a>
+    <a class="link" href="teaching.html">Teaching</a>
+    <button id="theme" type="button">Light</button>
+  </nav>
 </div></header>
 <main class="wrap">
-  <section class="block">
-    <div class="head"><h2>Publications</h2><a href="https://bib.cobiss.net/bibliographies/si/webBiblio/bib201_20261125_204723_34319.html" target="_blank" rel="noopener">Full COBISS bibliography</a></div>
-    <p class="meta" style="color:var(--ink-2);font-size:14px;margin:0 0 6px">Journal articles and conference papers. Abstracts, talks, reports and courses are in the full COBISS bibliography.</p>
-    <p class="meta" style="color:var(--muted);font-size:13px;margin:0"><span class="dot" style="background:var(--f-cell)"></span>cell biology <span class="dot" style="background:var(--f-viz);margin-left:10px"></span>data visualization <span class="dot" style="background:var(--f-ai);margin-left:10px"></span>AI. Each dot shows the field nearest to the item on the research map.</p>
-    <div id="all-pubs"></div>
-  </section>
+  <div class="page">
+    <aside class="page-head">
+      <p class="kicker mono">02 · papers</p>
+      <h1>Publi&shy;cations</h1>
+      <p>Journal articles and conference papers. Abstracts, talks, reports and courses are in the <a href="https://bib.cobiss.net/bibliographies/si/webBiblio/bib201_20261125_204723_34319.html" target="_blank" rel="noopener">full COBISS bibliography</a>.</p>
+      <div class="legend-dots">
+        <span><i class="dot" style="background:var(--f-cell)"></i>cell biology</span>
+        <span><i class="dot" style="background:var(--f-viz)"></i>data visualization</span>
+        <span><i class="dot" style="background:var(--f-ai)"></i>artificial intelligence</span>
+        <span style="margin-top:4px">dot = nearest field on the map</span>
+      </div>
+      <p style="margin-top:16px"><a href="index.html">← back to the map</a></p>
+    </aside>
+    <section id="all-pubs"></section>
+  </div>
 </main>
 <footer><div class="wrap"><span>© 2026 Alenka Guček · Jožef Stefan Institute, Ljubljana</span><span><a href="mailto:alenka.gucek@ijs.si">Email</a> · <a href="https://scholar.google.com/citations?user=tJEwAjEAAAAJ" target="_blank" rel="noopener">Google Scholar</a> · <a href="https://www.researchgate.net/profile/Alenka-Gucek-2" target="_blank" rel="noopener">ResearchGate</a> · <a href="https://www.linkedin.com/in/alenkagucek/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://orcid.org/0000-0003-4453-1498" target="_blank" rel="noopener">ORCID</a></span></div></footer>
-<script src="js/site.js?v=10"></script>
+<script src="js/site.js?v=11"></script>
 </body>
 </html>

@@ -1,8 +1,10 @@
 // Theme toggle + list rendering for home, projects and publications pages.
 (function () {
   const root = document.documentElement;
-  const saved = localStorage.getItem("theme");
-  if (saved) root.dataset.theme = saved;
+  // dark ("observatory") is the default; a visitor's own choice is remembered
+  let saved = null;
+  try { saved = localStorage.getItem("theme"); } catch (e) {}
+  root.dataset.theme = saved || "dark";
   const btn = document.getElementById("theme");
   const isDark = () => getComputedStyle(root).getPropertyValue("color-scheme").trim() === "dark";
   const label = () => { if (btn) btn.textContent = isDark() ? "Light" : "Dark"; };
@@ -105,7 +107,7 @@ async function renderLists() {
   if (latest || all) {
     const map = await fetch("data/map.json", { cache: "no-cache" }).then((r) => r.json());
     const pubs = [...map.mine].sort((a, b) => b.year - a.year);
-    if (latest) latest.innerHTML = pubs.filter((m) => m.kind === "article").slice(0, 4).map((m) => pubItem(m, map.background)).join("");
+    // (the homepage's latest-papers list is drawn by story.js, so its bullets can catch the flying dots)
     if (all) {
       // the publications page lists papers only: journal articles and conference papers
       all.innerHTML = pubs.filter((m) => m.kind === "article" || m.kind === "conference").map((m) => pubItem(m, map.background)).join("");
