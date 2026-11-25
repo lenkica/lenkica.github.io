@@ -7,7 +7,7 @@
     "format": "PhD course · 1.5 ECTS · one week, online",
     "topic": "viz",
     "url": "https://media.medfarm.uu.se/kurser/course_view.php?id=1421",
-    "summary": "A yearly course for PhD students and researchers on visualization principles, choosing chart types, colour, misleading charts and multivariate data, taught hands-on in open-source R and Python. Participants make their own COVID-19 visualization and prepare figures for publication, presentation or science communication. Guest teachers come from SciLifeLab, the Broad Institute, Science magazine and elsewhere."
+    "summary": "A yearly course for PhD students and researchers on visualization principles, choosing chart types, colour, misleading charts and multivariate data, taught hands-on in open-source R and Python. Participants prepare figures for publication, presentation or science communication. Guest teachers come from SciLifeLab, the Broad Institute, Science magazine and elsewhere."
   },
   {
     "title": "Practical aspects of visualizing research results",
@@ -37,8 +37,16 @@
     "where": "Open online courses, OpenLearn Create (The Open University)",
     "when": "2024 — 2025",
     "role": "Co-author, with T. Zdolšek Draksler, A. Fabjan and M. Kovačič",
-    "format": "Self-paced MOOC · three modules · English, Slovene, Spanish",
+    "format": "Free self-paced MOOCs · English, Slovene, Spanish",
     "topic": "ai",
-    "summary": "Three modules (fundamentals, responsible AI development, and creating awareness and change) on AI bias, data and democratic values. Developed in the AI4Gov project."
+    "url": "https://www.open.edu/openlearncreate/course/index.php?categoryid=2051",
+    "summary": "Open courses on AI bias, data and democratic values, from the basics to responsible AI development. Developed in the AI4Gov project.",
+    "links": [
+      {"label": "Fundamentals (15 h)", "url": "https://www.open.edu/openlearncreate/course/view.php?id=11669"},
+      {"label": "Creating Awareness and Change (50 h)", "url": "https://www.open.edu/openlearncreate/course/view.php?id=12579"},
+      {"label": "Responsible AI Development (10 h)", "url": "https://www.open.edu/openlearncreate/course/view.php?id=15837"},
+      {"label": "Osnove, in Slovene (15 h)", "url": "https://www.open.edu/openlearncreate/course/view.php?id=12525"},
+      {"label": "Fundamentos, in Spanish (15 h)", "url": "https://www.open.edu/openlearncreate/course/view.php?id=12055"}
+    ]
   }
 ]

@@ -64,13 +64,14 @@ function teachItem(t, full) {
   const dot = FIELD_VAR[t.topic] ? `<span class="dot" style="background:var(${FIELD_VAR[t.topic]})"></span>` : "";
   const title = t.url ? `<a href="${esc(t.url)}" target="_blank" rel="noopener">${esc(t.title)}</a>` : esc(t.title);
   const editions = full && t.editions ? `<ul class="eds">${t.editions.map((e) => `<li>${esc(e)}</li>`).join("")}</ul>` : "";
+  const links = full && t.links ? `<ul class="eds">${t.links.map((l) => `<li><a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)}</a></li>`).join("")}</ul>` : "";
   return `<div class="item">
     <div class="when">${esc(t.when)}</div>
     <div><h3>${dot}${title}</h3>
       ${full && t.original ? `<div class="meta" style="font-style:italic">${esc(t.original)}</div>` : ""}
       <div class="meta"><em>${esc(t.where)}</em></div>
       <div class="meta"><span class="tag">${esc(t.role)}</span>${full ? esc(t.format) : ""}</div>
-      ${full ? `<p class="meta" style="margin:6px 0 0">${esc(t.summary)}</p>${editions}` : ""}
+      ${full ? `<p class="meta" style="margin:6px 0 0">${esc(t.summary)}</p>${editions}${links}` : ""}
     </div></div>`;
 }
 
