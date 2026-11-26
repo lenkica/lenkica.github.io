@@ -5,36 +5,38 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Publications — Alenka Guček</title>
 <script>try { const t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
-<link rel="stylesheet" href="css/style.css?v=11">
+<link rel="stylesheet" href="css/style.css?v=12">
 </head>
 <body>
 <header class="nav"><div class="wrap">
   <a class="brand" href="index.html"><span class="mono">A·G</span> <span class="name">Alenka Guček</span></a>
   <nav>
-    <a class="link" href="projects.html">Projects</a>
-    <a class="link" href="publications.html" aria-current="page">Publications</a>
-    <a class="link" href="teaching.html">Teaching</a>
-    <button id="theme" type="button">Light</button>
+    <a class="link" href="projects.html" data-i18n="nav.projects">Projects</a>
+    <a class="link" href="publications.html" aria-current="page" data-i18n="nav.publications">Publications</a>
+    <a class="link" href="teaching.html" data-i18n="nav.teaching">Teaching</a>
+    <button id="lang" class="pill" type="button">SL</button>
+    <button id="theme" class="pill" type="button">Light</button>
   </nav>
 </div></header>
 <main class="wrap">
   <div class="page">
     <aside class="page-head">
-      <p class="kicker mono">02 · papers</p>
-      <h1>Publi&shy;cations</h1>
-      <p>Journal articles and conference papers. Abstracts, talks, reports and courses are in the <a href="https://bib.cobiss.net/bibliographies/si/webBiblio/bib201_20261125_204723_34319.html" target="_blank" rel="noopener">full COBISS bibliography</a>.</p>
+      <p class="kicker mono" data-i18n="pubs.kicker">02 · papers</p>
+      <h1 data-i18n="pubs.h">Publi&shy;cations</h1>
+      <p data-i18n-html="pubs.p">Journal articles and conference papers. Abstracts, talks, reports and courses are in the <a href="https://bib.cobiss.net/bibliographies/si/webBiblio/bib201_20261125_204723_34319.html" target="_blank" rel="noopener">full COBISS bibliography</a>.</p>
       <div class="legend-dots">
-        <span><i class="dot" style="background:var(--f-cell)"></i>cell biology</span>
-        <span><i class="dot" style="background:var(--f-viz)"></i>data visualization</span>
-        <span><i class="dot" style="background:var(--f-ai)"></i>artificial intelligence</span>
-        <span style="margin-top:4px">dot = nearest field on the map</span>
+        <span><i class="dot" style="background:var(--f-cell)"></i><span data-i18n="field.cell.l">cell biology</span></span>
+        <span><i class="dot" style="background:var(--f-viz)"></i><span data-i18n="field.viz.l">data visualization</span></span>
+        <span><i class="dot" style="background:var(--f-ai)"></i><span data-i18n="field.ai.l">artificial intelligence</span></span>
+        <span style="margin-top:4px" data-i18n="pubs.dotnote">dot = nearest field on the map</span>
       </div>
-      <p style="margin-top:16px"><a href="index.html">← back to the map</a></p>
+      <p style="margin-top:16px"><a href="index.html" data-i18n="back">← back to the map</a></p>
     </aside>
     <section id="all-pubs"></section>
   </div>
 </main>
-<footer><div class="wrap"><span>© 2026 Alenka Guček · Jožef Stefan Institute, Ljubljana</span><span><a href="mailto:alenka.gucek@ijs.si">Email</a> · <a href="https://scholar.google.com/citations?user=tJEwAjEAAAAJ" target="_blank" rel="noopener">Google Scholar</a> · <a href="https://www.researchgate.net/profile/Alenka-Gucek-2" target="_blank" rel="noopener">ResearchGate</a> · <a href="https://www.linkedin.com/in/alenkagucek/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://orcid.org/0000-0003-4453-1498" target="_blank" rel="noopener">ORCID</a></span></div></footer>
-<script src="js/site.js?v=11"></script>
+<footer><div class="wrap"><span data-i18n="footer">© 2026 Alenka Guček · Jožef Stefan Institute, Ljubljana</span><span><a href="mailto:alenka.gucek@ijs.si" data-i18n="email">Email</a> · <a href="https://scholar.google.com/citations?user=tJEwAjEAAAAJ" target="_blank" rel="noopener">Google Scholar</a> · <a href="https://www.researchgate.net/profile/Alenka-Gucek-2" target="_blank" rel="noopener">ResearchGate</a> · <a href="https://www.linkedin.com/in/alenkagucek/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://orcid.org/0000-0003-4453-1498" target="_blank" rel="noopener">ORCID</a></span></div></footer>
+<script src="js/i18n.js?v=12"></script>
+<script src="js/site.js?v=12"></script>
 </body>
 </html>

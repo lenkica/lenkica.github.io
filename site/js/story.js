@@ -13,7 +13,8 @@
 
   const FIELDS = ["cell", "viz", "ai"];
   const FIELD_VAR = { cell: "--f-cell", viz: "--f-viz", ai: "--f-ai" };
-  const FIELD_NAME = { cell: "Cell biology", viz: "Data visualization", ai: "Artificial intelligence" };
+  const tr = (...a) => window.I18N.t(...a);
+  const FIELD_NAME = new Proxy({}, { get: (_, f) => tr("field." + String(f)) });
   const THEMES = {
     exocytosis: { label: "Exocytosis & fusion pores", field: "cell" },
     trustworthy: { label: "Trustworthy AI & bias", field: "ai" },
@@ -22,6 +23,7 @@
     dataviz: { label: "Dataviz & science communication", field: "viz" },
     health: { label: "Health & rare-disease data", field: "viz" },
   };
+  for (const k of Object.keys(THEMES)) Object.defineProperty(THEMES[k], "label", { get: () => tr("theme." + k) });
   const PAPERS = new Set(["article", "conference"]);
   const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[ch]));
   const css = (v) => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
@@ -322,7 +324,7 @@
         ctx.fillText(t.th.label, t.lx + dir * 13, t.y - 4);
         ctx.font = `11px ${css("--mono")}`;
         ctx.fillStyle = css("--ink-2");
-        ctx.fillText(`${t.span} · ${t.n} outputs`, t.lx + dir * 13, t.y + 11);
+        ctx.fillText(`${t.span} · ${tr("outputs", t.n)}`, t.lx + dir * 13, t.y + 11);
         const w = Math.max(ctx.measureText(t.th.label).width * 1.15, 150);
         t.hit = t.side === "L" ? [t.lx, t.y - 20, w + 20, 38] : [t.lx - w - 20, t.y - 20, w + 20, 38];
       }
@@ -374,7 +376,9 @@
       </a>`).join("");
   }
   const method = document.getElementById("method");
-  if (method) method.textContent = `Map: ${mine.length} of my outputs among ${bg.length.toLocaleString()} OpenAlex papers · embedded with ${data.model.split("/").pop()} · UMAP · built ${data.generated}`;
+  const setMethod = () => { if (method) method.textContent = tr("method", mine.length, bg.length.toLocaleString(window.I18N.lang === "sl" ? "sl-SI" : "en-GB"), data.model.split("/").pop(), data.generated); };
+  setMethod();
+  addEventListener("langchange", setMethod);
 
   // ---------- step detection ----------
   const io = new IntersectionObserver((entries) => {
@@ -428,7 +432,7 @@
       }
       if (best) {
         const c = data.clusters.find((c) => c.id === best[3]);
-        return showTip(`<div class="k"><i style="background:${fieldColors[best[2]]}"></i>${FIELD_NAME[best[2]]} literature</div>${c ? `<div class="m mono">topic: ${esc(c.label)}</div>` : ""}`, x, y);
+        return showTip(`<div class="k"><i style="background:${fieldColors[best[2]]}"></i>${FIELD_NAME[best[2]]} · ${tr("literature")}</div>${c ? `<div class="m mono">${tr("topic")}: ${esc(c.label)}</div>` : ""}`, x, y);
       }
     }
     hideTip();

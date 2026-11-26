@@ -2,51 +2,76 @@
   {
     "title": "Data Visualization for Life Science",
     "where": "Uppsala University, Department of Medical Cell Biology",
+    "where_sl": "Univerza v Uppsali, Oddelek za medicinsko celično biologijo",
     "when": "2021 — now",
     "role": "Course leader · guest lecturer",
+    "role_sl": "Vodja predmeta · gostujoča predavateljica",
     "format": "PhD course · 1.5 ECTS · one week, online",
+    "format_sl": "Doktorski predmet · 1,5 ECTS · en teden, na daljavo",
     "topic": "viz",
     "url": "https://media.medfarm.uu.se/kurser/course_view.php?id=1421",
-    "summary": "A yearly course for PhD students and researchers on visualization principles, choosing chart types, colour, misleading charts and multivariate data, taught hands-on in open-source R and Python. Participants prepare figures for publication, presentation or science communication. Guest teachers come from SciLifeLab, the Broad Institute, Science magazine and elsewhere."
+    "summary": "A yearly course for PhD students and researchers on visualization principles, choosing chart types, colour, misleading charts and multivariate data, taught hands-on in open-source R and Python. Participants prepare figures for publication, presentation or science communication. Guest teachers come from SciLifeLab, the Broad Institute, Science magazine and elsewhere.",
+    "summary_sl": "Vsakoletni predmet za doktorske študente in raziskovalce o načelih vizualizacije, izbiri vrste grafa, barvah, zavajajočih grafih in večrazsežnih podatkih, s praktičnim delom v odprtokodnih R in Python. Udeleženci pripravijo slike za objavo, predstavitev ali komunikacijo znanosti. Gostujoči predavatelji prihajajo iz SciLifeLaba, Broad Institute, revije Science in drugod."
   },
   {
     "title": "Practical aspects of visualizing research results",
+    "title_sl": "Praktični vidiki vizualizacije raziskovalnih rezultatov",
     "original": "Praktični vidiki vizualizacije raziskovalnih rezultatov",
     "where": "University of Ljubljana, Faculty of Social Sciences",
+    "where_sl": "Univerza v Ljubljani, Fakulteta za družbene vede",
     "when": "2025 · two editions",
+    "when_sl": "2025 · dve izvedbi",
     "role": "Lecturer",
+    "role_sl": "Predavateljica",
     "format": "Micro-credential training (ULTRA project) · lectures + group work",
+    "format_sl": "Usposabljanje za mikrodokazilo (projekt ULTRA) · predavanja in skupinsko delo",
     "topic": "viz",
     "url": "https://www.uni-lj.si/novice/2025-05-12-usposabljanje-o-vizualizaciji-podatkov-kako-jasno-predstaviti-raziskovalne-rezultate",
-    "summary": "Training for students and researchers on presenting research results clearly: showing the full spread of the data, matching chart type to data, guiding the reader's attention, accessible colour and avoiding chart junk. Groups designed visualizations for real datasets, weighing audience, message and ethical dilemmas."
+    "summary": "Training for students and researchers on presenting research results clearly: showing the full spread of the data, matching chart type to data, guiding the reader's attention, accessible colour and avoiding chart junk. Groups designed visualizations for real datasets, weighing audience, message and ethical dilemmas.",
+    "summary_sl": "Usposabljanje za študente in raziskovalce o jasnem predstavljanju raziskovalnih rezultatov: prikaz celotne razpršenosti podatkov, izbira grafa glede na podatke, usmerjanje pozornosti bralca, dostopne barve in izogibanje nepotrebnim okraskom. Skupine so oblikovale vizualizacije za resnične podatkovne nize in pri tem tehtale občinstvo, sporočilo in etične dileme."
   },
   {
-    "title": "Ethical aspects and responsible use of artificial intelligence",
-    "original": "Etični vidiki in odgovorna uporaba umetne inteligence",
-    "where": "Administration Academy (Upravna akademija), Ministry of Public Administration",
+    "title": "AI in the public sector: a training series for public servants",
+    "title_sl": "Umetna inteligenca v javnem sektorju: cikel usposabljanj za javne uslužbence",
+    "where": "Administration Academy (Upravna akademija)",
+    "where_sl": "Upravna akademija",
     "when": "2025 — now",
     "role": "Trainer, with T. Zdolšek Draksler and M. Kovačič",
-    "format": "Training for public servants · 3 hours, online",
+    "role_sl": "Izvajalka, s T. Zdolšek Draksler in M. Kovačičem",
+    "format": "Three online trainings, each repeated through the year",
+    "format_sl": "Tri spletna usposabljanja, vsako večkrat na leto",
     "topic": "ai",
     "url": "https://ua.gov.si/aktivnosti/detajli/?ID=fc5838b7-cea6-f111-abd0-005056817c25&Tag=459,581",
-    "summary": "What AI is and how the public sector uses it, ethical principles illustrated with real cases where they were broken, bias in AI systems, and how to assess ethical risks before introducing an AI solution.",
-    "editions": ["Nov 2025: AI in the public sector: ethical challenges and responsible use", "Jan 2026: Legal aspects of using AI in the public sector", "Nov 2026: Ethical aspects and responsible use of AI"]
+    "badge": "9 sessions in 2025/26 · new dates in 2026/27",
+    "badge_sl": "9 izvedb v sezoni 2025/26 · novi termini v sezoni 2026/27",
+    "summary": "A series of online trainings that public servants can take one by one. Together they cover what AI is and how the public sector uses it, ethics and bias, the legal framework, and authorship and intellectual property.",
+    "summary_sl": "Cikel spletnih usposabljanj, ki se jih javni uslužbenci lahko udeležijo posamično. Skupaj zajemajo, kaj je UI in kako jo uporablja javni sektor, etiko in pristranskost, pravni okvir ter avtorstvo in intelektualno lastnino.",
+    "modules": [
+      {"title": "AI in the public sector: ethical challenges and responsible use", "title_sl": "Umetna inteligenca v javnem sektorju – etični izzivi in odgovorna uporaba"},
+      {"title": "Legal aspects of using AI in the public sector", "title_sl": "Pravni vidiki uporabe umetne inteligence v javnem sektorju"},
+      {"title": "Authorship, intellectual property and responsibility when using AI", "title_sl": "Avtorstvo, intelektualna lastnina in odgovornost pri uporabi UI"}
+    ]
   },
   {
     "title": "Trustworthy and Democratic AI",
+    "title_sl": "Zaupanja vredna in demokratična umetna inteligenca",
     "where": "Open online courses, OpenLearn Create (The Open University)",
+    "where_sl": "Odprti spletni tečaji, OpenLearn Create (The Open University)",
     "when": "2024 — 2025",
     "role": "Co-author, with T. Zdolšek Draksler, A. Fabjan and M. Kovačič",
+    "role_sl": "Soavtorica, s T. Zdolšek Draksler, A. Fabjan in M. Kovačičem",
     "format": "Free self-paced MOOCs · English, Slovene, Spanish",
+    "format_sl": "Brezplačni spletni tečaji v lastnem tempu · angleščina, slovenščina, španščina",
     "topic": "ai",
     "url": "https://www.open.edu/openlearncreate/course/index.php?categoryid=2051",
     "summary": "Open courses on AI bias, data and democratic values, from the basics to responsible AI development. Developed in the AI4Gov project.",
+    "summary_sl": "Odprti tečaji o pristranskosti UI, podatkih in demokratičnih vrednotah, od osnov do odgovornega razvoja UI. Nastali so v projektu AI4Gov.",
     "links": [
-      {"label": "Fundamentals (15 h)", "url": "https://www.open.edu/openlearncreate/course/view.php?id=11669"},
-      {"label": "Creating Awareness and Change (50 h)", "url": "https://www.open.edu/openlearncreate/course/view.php?id=12579"},
-      {"label": "Responsible AI Development (10 h)", "url": "https://www.open.edu/openlearncreate/course/view.php?id=15837"},
-      {"label": "Osnove, in Slovene (15 h)", "url": "https://www.open.edu/openlearncreate/course/view.php?id=12525"},
-      {"label": "Fundamentos, in Spanish (15 h)", "url": "https://www.open.edu/openlearncreate/course/view.php?id=12055"}
+      {"label": "Fundamentals (15 h)", "label_sl": "Osnove, v angleščini (15 ur)", "url": "https://www.open.edu/openlearncreate/course/view.php?id=11669"},
+      {"label": "Creating Awareness and Change (50 h)", "label_sl": "Ozaveščanje in spremembe, v angleščini (50 ur)", "url": "https://www.open.edu/openlearncreate/course/view.php?id=12579"},
+      {"label": "Responsible AI Development (10 h)", "label_sl": "Odgovoren razvoj UI, v angleščini (10 ur)", "url": "https://www.open.edu/openlearncreate/course/view.php?id=15837"},
+      {"label": "Osnove, in Slovene (15 h)", "label_sl": "Osnove, v slovenščini (15 ur)", "url": "https://www.open.edu/openlearncreate/course/view.php?id=12525"},
+      {"label": "Fundamentos, in Spanish (15 h)", "label_sl": "Fundamentos, v španščini (15 ur)", "url": "https://www.open.edu/openlearncreate/course/view.php?id=12055"}
     ]
   }
 ]

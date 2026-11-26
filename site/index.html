@@ -4,18 +4,19 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Alenka Guček — cell biology · data visualization · AI</title>
-<meta name="description" content="Researcher at the Jožef Stefan Institute working where cell biology, data visualization and AI meet.">
+<meta name="description" content="Researcher at the Department of Artificial Intelligence, Jožef Stefan Institute, working where cell biology, data visualization and AI meet.">
 <script>try { const t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
-<link rel="stylesheet" href="css/style.css?v=11">
+<link rel="stylesheet" href="css/style.css?v=12">
 </head>
 <body class="home">
 <header class="nav"><div class="wrap">
   <a class="brand" href="index.html"><span class="mono">A·G</span> <span class="name">Alenka Guček</span></a>
   <nav>
-    <a class="link" href="projects.html">Projects</a>
-    <a class="link" href="publications.html">Publications</a>
-    <a class="link" href="teaching.html">Teaching</a>
-    <button id="theme" type="button">Light</button>
+    <a class="link" href="projects.html" data-i18n="nav.projects">Projects</a>
+    <a class="link" href="publications.html" data-i18n="nav.publications">Publications</a>
+    <a class="link" href="teaching.html" data-i18n="nav.teaching">Teaching</a>
+    <button id="lang" class="pill" type="button">SL</button>
+    <button id="theme" class="pill" type="button">Light</button>
   </nav>
 </div></header>
 
@@ -28,93 +29,94 @@
 <main id="story">
   <section class="step hero" data-step="hero">
     <div class="card">
-      <p class="kicker mono">cell biology × data visualization × AI</p>
+      <p class="kicker mono" data-i18n="hero.kicker">cell biology × data visualization × AI</p>
       <h1>Alenka<br>Guček</h1>
-      <p class="lede">I started out watching single vesicles fuse with the cell membrane. Now I work on <b>trustworthy AI</b> and <b>data visualization</b> at the Artificial Intelligence Laboratory, Jožef Stefan Institute, and I am a guest lecturer at <b>Uppsala University</b>.</p>
+      <p class="lede" data-i18n-html="hero.lede">I started out watching <span class="hl hl-cell">single vesicles fuse with the cell membrane</span>. Now I work on <span class="hl hl-ai">trustworthy AI</span> and <span class="hl hl-viz">data visualization</span> at the Department of Artificial Intelligence, Jožef Stefan Institute, and I am a guest lecturer at <b>Uppsala University</b>.</p>
       <div class="links">
         <a href="https://scholar.google.com/citations?user=tJEwAjEAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
         <a href="https://www.researchgate.net/profile/Alenka-Gucek-2" target="_blank" rel="noopener">ResearchGate</a>
         <a href="https://www.linkedin.com/in/alenkagucek/" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://orcid.org/0000-0003-4453-1498" target="_blank" rel="noopener">ORCID</a>
-        <a href="mailto:alenka.gucek@ijs.si">Email</a>
+        <a href="mailto:alenka.gucek@ijs.si" data-i18n="email">Email</a>
       </div>
       <figure class="portrait">
-        <img src="imgs/profile.webp" alt="Alenka Guček sitting on a park bench">
-        <figcaption>Photo: Jože Suhadolnik / Delo</figcaption>
+        <img src="imgs/profile.webp" alt="Alenka Guček">
+        <figcaption data-i18n="photo">Photo: Jože Suhadolnik / Delo</figcaption>
       </figure>
-      <p class="scroll-hint mono">scroll to explore the map ↓</p>
+      <p class="scroll-hint mono" data-i18n="scroll">scroll to explore the map ↓</p>
     </div>
   </section>
 
   <section class="step" data-step="cell">
     <div class="card">
-      <p class="kicker mono"><i class="sw" style="background:var(--f-cell)"></i>I · cell biology · 2011–2021</p>
-      <h2>Watching single vesicles fuse</h2>
-      <p>For my PhD at the University of Ljubljana and my postdoc at Uppsala University I recorded single vesicles fusing with the cell membrane. I measured fusion pores in astrocytes and insulin-secreting β-cells with electrophysiology and super-resolution microscopy.</p>
-      <p class="note mono">The bright dots are my 40 outputs from those years. The teal cloud is 1,500 cell-biology papers placed by what their abstracts say.</p>
+      <p class="kicker mono"><i class="sw" style="background:var(--f-cell)"></i><span data-i18n="cell.kicker">I · cell biology · 2011–2021</span></p>
+      <h2 data-i18n="cell.h">Watching single vesicles fuse</h2>
+      <p data-i18n="cell.p">For my PhD at the University of Ljubljana and my postdoc at Uppsala University I recorded single vesicles fusing with the cell membrane. I measured fusion pores in astrocytes and insulin-secreting β-cells with electrophysiology and super-resolution microscopy.</p>
+      <p class="note mono" data-i18n="cell.note">The bright dots are my 40 outputs from those years. The teal cloud is 1,500 cell-biology papers placed by what their abstracts say.</p>
     </div>
   </section>
 
   <section class="step" data-step="viz">
     <div class="card">
-      <p class="kicker mono"><i class="sw" style="background:var(--f-viz)"></i>II · data visualization · 2021–</p>
-      <h2>Making data speak</h2>
-      <p>Explaining very specialised results to other people pulled me towards data visualization. I design visual stories for health and rare-disease data, speak and write about effective scientific figures, and lead a PhD course on data visualization for life science at Uppsala University.</p>
+      <p class="kicker mono"><i class="sw" style="background:var(--f-viz)"></i><span data-i18n="viz.kicker">II · data visualization · 2021–</span></p>
+      <h2 data-i18n="viz.h">Making data speak</h2>
+      <p data-i18n="viz.p">Explaining very specialised results to other people pulled me towards data visualization. I design visual stories for health and rare-disease data, speak and write about effective scientific figures, and lead a PhD course on data visualization for life science at Uppsala University.</p>
     </div>
   </section>
 
   <section class="step" data-step="ai">
     <div class="card">
-      <p class="kicker mono"><i class="sw" style="background:var(--f-ai)"></i>III · artificial intelligence · 2021–</p>
-      <h2>Trustworthy AI</h2>
-      <p>At the Jožef Stefan Institute's AI Lab I work on trustworthy and unbiased AI for public governance, AI agents that simulate debates on social media, and AI analytics for water and health.</p>
+      <p class="kicker mono"><i class="sw" style="background:var(--f-ai)"></i><span data-i18n="ai.kicker">III · artificial intelligence · 2021–</span></p>
+      <h2 data-i18n="ai.h">Trustworthy AI</h2>
+      <p data-i18n="ai.p">At the Department of Artificial Intelligence of the Jožef Stefan Institute I work on trustworthy and unbiased AI for public governance, AI agents that simulate debates on social media, and AI analytics for water and health.</p>
     </div>
   </section>
 
   <section class="step" data-step="all">
     <div class="card">
-      <p class="kicker mono">IV · the whole map</p>
-      <h2>Where it all meets</h2>
-      <p>About 4,400 papers from the three fields, with my work among them. Hover over a theme to light up its outputs, or over a dot to see what it is.</p>
+      <p class="kicker mono" data-i18n="all.kicker">IV · the whole map</p>
+      <h2 data-i18n="all.h">Where it all meets</h2>
+      <p data-i18n="all.p">About 4,400 papers from the three fields, with my work among them. Hover over a theme to light up its outputs, or over a dot to see what it is.</p>
       <div class="controls">
-        <button type="button" data-filter="all" aria-pressed="true">All outputs</button>
-        <button type="button" data-filter="papers" aria-pressed="false">Papers only</button>
+        <button type="button" data-filter="all" aria-pressed="true" data-i18n="filter.all">All outputs</button>
+        <button type="button" data-filter="papers" aria-pressed="false" data-i18n="filter.papers">Papers only</button>
       </div>
     </div>
   </section>
 
   <section class="step" data-step="timeline">
     <div class="card">
-      <p class="kicker mono">V · fifteen years</p>
-      <h2>One dot per output</h2>
-      <p>The same dots, now sorted by year and coloured by the field they sit closest to. Teal gives way to coral and violet.</p>
+      <p class="kicker mono" data-i18n="tl.kicker">V · fifteen years</p>
+      <h2 data-i18n="tl.h">One dot per output</h2>
+      <p data-i18n="tl.p">The same dots, now sorted by year and coloured by the field they sit closest to. Teal gives way to coral and violet.</p>
     </div>
   </section>
 
   <section class="step list-step" data-step="list">
     <div class="card wide">
-      <p class="kicker mono">VI · latest papers</p>
-      <h2>Recent work</h2>
+      <p class="kicker mono" data-i18n="list.kicker">VI · latest papers</p>
+      <h2 data-i18n="list.h">Recent work</h2>
       <div id="latest-pubs" class="latest"></div>
-      <a class="all-papers" id="all-papers" href="publications.html">All journal and conference papers →</a>
+      <a class="all-papers" id="all-papers" href="publications.html" data-i18n="list.all">All journal and conference papers →</a>
     </div>
   </section>
 
   <section class="after">
     <nav class="gates" aria-label="More">
-      <a class="gate" href="projects.html"><span class="g-k mono">01</span><span class="g-t">Projects</span><span class="g-s" id="g-projects">Current and past research projects</span></a>
-      <a class="gate" href="publications.html"><span class="g-k mono">02</span><span class="g-t">Publications</span><span class="g-s" id="g-pubs">Journal and conference papers</span></a>
-      <a class="gate" href="teaching.html"><span class="g-k mono">03</span><span class="g-t">Teaching</span><span class="g-s" id="g-teach">Courses and trainings</span></a>
+      <a class="gate" href="projects.html"><span class="g-k mono">01</span><span class="g-t" data-i18n="gate.projects">Projects</span><span class="g-s" id="g-projects"></span></a>
+      <a class="gate" href="publications.html"><span class="g-k mono">02</span><span class="g-t" data-i18n="gate.publications">Publications</span><span class="g-s" id="g-pubs"></span></a>
+      <a class="gate" href="teaching.html"><span class="g-k mono">03</span><span class="g-t" data-i18n="gate.teaching">Teaching</span><span class="g-s" id="g-teach"></span></a>
     </nav>
     <p class="method mono" id="method"></p>
   </section>
 </main>
 
 <footer><div class="wrap">
-  <span>© 2026 Alenka Guček · Jožef Stefan Institute, Ljubljana</span>
-  <span><a href="mailto:alenka.gucek@ijs.si">Email</a> · <a href="https://scholar.google.com/citations?user=tJEwAjEAAAAJ" target="_blank" rel="noopener">Google Scholar</a> · <a href="https://www.researchgate.net/profile/Alenka-Gucek-2" target="_blank" rel="noopener">ResearchGate</a> · <a href="https://www.linkedin.com/in/alenkagucek/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://orcid.org/0000-0003-4453-1498" target="_blank" rel="noopener">ORCID</a></span>
+  <span data-i18n="footer">© 2026 Alenka Guček · Jožef Stefan Institute, Ljubljana</span>
+  <span><a href="mailto:alenka.gucek@ijs.si" data-i18n="email">Email</a> · <a href="https://scholar.google.com/citations?user=tJEwAjEAAAAJ" target="_blank" rel="noopener">Google Scholar</a> · <a href="https://www.researchgate.net/profile/Alenka-Gucek-2" target="_blank" rel="noopener">ResearchGate</a> · <a href="https://www.linkedin.com/in/alenkagucek/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://orcid.org/0000-0003-4453-1498" target="_blank" rel="noopener">ORCID</a></span>
 </div></footer>
-<script src="js/site.js?v=11"></script>
-<script src="js/story.js?v=11"></script>
+<script src="js/i18n.js?v=12"></script>
+<script src="js/site.js?v=12"></script>
+<script src="js/story.js?v=12"></script>
 </body>
 </html>

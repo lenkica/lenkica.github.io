@@ -1,4 +1,8 @@
-// Theme toggle + list rendering for home, projects and publications pages.
+// Theme toggle + list rendering for the homepage buttons and the projects, publications and teaching pages.
+// Text comes from i18n.js (I18N.t for interface text, I18N.L for the _sl fields in the data files).
+const t = (...a) => window.I18N.t(...a);
+const L = (o, f) => window.I18N.L(o, f);
+
 (function () {
   const root = document.documentElement;
   // dark ("observatory") is the default; a visitor's own choice is remembered
@@ -7,19 +11,20 @@
   root.dataset.theme = saved || "dark";
   const btn = document.getElementById("theme");
   const isDark = () => getComputedStyle(root).getPropertyValue("color-scheme").trim() === "dark";
-  const label = () => { if (btn) btn.textContent = isDark() ? "Light" : "Dark"; };
+  const label = () => { if (btn) btn.textContent = isDark() ? t("theme.light") : t("theme.dark"); };
   label();
+  window.addEventListener("langchange", label);
   btn?.addEventListener("click", () => {
     root.dataset.theme = isDark() ? "light" : "dark";
-    localStorage.setItem("theme", root.dataset.theme);
+    try { localStorage.setItem("theme", root.dataset.theme); } catch (e) {}
     label();
     window.dispatchEvent(new Event("themechange"));
   });
 })();
 
 const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[ch]));
-const KIND = { article: "Journal article", conference: "Conference paper", abstract: "Conference abstract", talk: "Talk", thesis: "Thesis", report: "Project report", course: "Course", data: "Dataset", other: "Other" };
 const FIELD_VAR = { cell: "--f-cell", viz: "--f-viz", ai: "--f-ai" };
+const nowWord = (s) => String(s ?? "").replace(/\bnow\b/, t("now"));
 
 function boldMe(authors) {
   return esc(authors).replace(/Guček A/g, "<em>Guček A</em>");
@@ -36,10 +41,9 @@ function nearestField(m, background) {
   return Object.keys(votes).sort((a, b) => votes[b] - votes[a])[0];
 }
 
-const FIELD_LABEL = { cell: "cell biology", viz: "data visualization", ai: "AI" };
 function pubItem(m, background) {
   const f = background ? nearestField(m, background) : null;
-  const dot = f ? `<span class="dot" style="background:var(${FIELD_VAR[f]})" title="Nearest field on the map: ${FIELD_LABEL[f]}"></span>` : "";
+  const dot = f ? `<span class="dot" style="background:var(${FIELD_VAR[f]})" title="${esc(t("dot.title"))}: ${esc(t(`field.${f}.l`))}"></span>` : "";
   const links = [
     m.doi ? `<a href="https://doi.org/${esc(m.doi)}" target="_blank" rel="noopener">DOI</a>` : "",
     m.url ? `<a href="${esc(m.url)}" target="_blank" rel="noopener">Link</a>` : "",
@@ -48,78 +52,71 @@ function pubItem(m, background) {
     <div class="when">${m.year}</div>
     <div><h3>${dot}${esc(m.title)}</h3>
       <div class="meta">${boldMe(m.authors)}</div>
-      <div class="meta"><span class="tag">${KIND[m.kind] || m.kind}</span>${esc(m.venue)}</div>
+      <div class="meta"><span class="tag">${esc(t(`kind.${m.kind}`))}</span>${esc(m.venue)}</div>
       ${links ? `<div class="acts">${links}</div>` : ""}
     </div></div>`;
 }
 
 function projItem(p) {
+  const name = L(p, "name");
   return `<div class="item">
-    <div class="when">${esc(p.when)}</div>
-    <div><h3>${p.url ? `<a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.name)}</a>` : esc(p.name)}</h3>
-      <div class="meta"><span class="tag">${esc(p.funder)}</span>${esc(p.role || "")}</div>
-      <p class="meta" style="margin:6px 0 0">${esc(p.summary)}</p>
+    <div class="when">${esc(nowWord(L(p, "when")))}</div>
+    <div><h3>${p.url ? `<a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(name)}</a>` : esc(name)}</h3>
+      <div class="meta"><span class="tag">${esc(L(p, "funder"))}</span></div>
+      <p class="meta" style="margin:6px 0 0">${esc(L(p, "summary"))}</p>
     </div></div>`;
 }
 
-function teachItem(t, full) {
-  const dot = FIELD_VAR[t.topic] ? `<span class="dot" style="background:var(${FIELD_VAR[t.topic]})"></span>` : "";
-  const title = t.url ? `<a href="${esc(t.url)}" target="_blank" rel="noopener">${esc(t.title)}</a>` : esc(t.title);
-  const editions = full && t.editions ? `<ul class="eds">${t.editions.map((e) => `<li>${esc(e)}</li>`).join("")}</ul>` : "";
-  const links = full && t.links ? `<ul class="eds">${t.links.map((l) => `<li><a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)}</a></li>`).join("")}</ul>` : "";
+function teachItem(x) {
+  const dot = FIELD_VAR[x.topic] ? `<span class="dot" style="background:var(${FIELD_VAR[x.topic]})"></span>` : "";
+  const title = x.url ? `<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(L(x, "title"))}</a>` : esc(L(x, "title"));
+  const badge = x.badge ? `<div class="badge mono"><i></i>${esc(t("teach.ongoing"))} · ${esc(L(x, "badge"))}</div>` : "";
+  const modules = x.modules ? `<ol class="mods">${x.modules.map((mo) => `<li>${esc(L(mo, "title"))}</li>`).join("")}</ol>` : "";
+  const links = x.links ? `<ul class="eds">${x.links.map((l) => `<li><a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(L(l, "label"))}</a></li>`).join("")}</ul>` : "";
+  const original = window.I18N.lang === "en" && x.original ? `<div class="meta" style="font-style:italic">${esc(x.original)}</div>` : "";
   return `<div class="item">
-    <div class="when">${esc(t.when)}</div>
+    <div class="when">${esc(nowWord(L(x, "when")))}</div>
     <div><h3>${dot}${title}</h3>
-      ${full && t.original ? `<div class="meta" style="font-style:italic">${esc(t.original)}</div>` : ""}
-      <div class="meta"><em>${esc(t.where)}</em></div>
-      <div class="meta"><span class="tag">${esc(t.role)}</span>${full ? esc(t.format) : ""}</div>
-      ${full ? `<p class="meta" style="margin:6px 0 0">${esc(t.summary)}</p>${editions}${links}` : ""}
+      ${original}
+      <div class="meta"><em>${esc(L(x, "where"))}</em></div>
+      <div class="meta"><span class="tag">${esc(L(x, "role"))}</span>${esc(L(x, "format"))}</div>
+      ${badge}
+      <p class="meta" style="margin:6px 0 0">${esc(L(x, "summary"))}</p>${modules}${links}
     </div></div>`;
 }
 
-// homepage buttons: live counts from the data files
-async function renderGates() {
-  const gp = document.getElementById("g-projects");
-  if (!gp) return;
-  const get = (f) => fetch(`data/${f}.json`, { cache: "no-cache" }).then((r) => r.json());
-  const [proj, map, teach] = await Promise.all([get("projects"), get("map"), get("teaching")]);
-  const papers = map.mine.filter((m) => m.kind === "article" || m.kind === "conference").length;
-  gp.textContent = `${proj.filter((p) => p.active).length} current · ${proj.filter((p) => !p.active).length} past`;
-  document.getElementById("g-pubs").textContent = `${papers} journal and conference papers`;
-  document.getElementById("g-teach").textContent = `${teach.length} courses and trainings`;
-}
-renderGates();
+// ---------- data, loaded once; everything re-renders when the language changes ----------
+const getJSON = (f) => fetch(`data/${f}.json`, { cache: "no-cache" }).then((r) => r.json());
+const need = {
+  projects: document.getElementById("g-projects") || document.getElementById("all-projects"),
+  map: document.getElementById("g-pubs") || document.getElementById("all-pubs"),
+  teaching: document.getElementById("g-teach") || document.getElementById("all-teaching"),
+};
+const DATA = {};
+const ready = Promise.all(Object.keys(need).filter((k) => need[k]).map((k) => getJSON(k).then((d) => (DATA[k] = d))));
 
-async function renderLists() {
-  const teach = document.getElementById("teaching");
-  const teachAll = document.getElementById("all-teaching");
-  if (teach || teachAll) {
-    fetch("data/teaching.json", { cache: "no-cache" }).then((r) => r.json()).then((t) => {
-      if (teach) teach.innerHTML = t.map((x) => teachItem(x, false)).join("");
-      if (teachAll) teachAll.innerHTML = t.map((x) => teachItem(x, true)).join("");
-    });
+function render() {
+  const $ = (id) => document.getElementById(id);
+  // homepage buttons: live counts
+  if ($("g-projects") && DATA.projects) $("g-projects").textContent = t("gate.projects.n", DATA.projects.filter((p) => p.active).length, DATA.projects.filter((p) => !p.active).length);
+  if ($("g-pubs") && DATA.map) $("g-pubs").textContent = t("gate.pubs.n", DATA.map.mine.filter((m) => m.kind === "article" || m.kind === "conference").length);
+  if ($("g-teach") && DATA.teaching) $("g-teach").textContent = t("gate.teach.n", DATA.teaching.length);
+  // full lists
+  if ($("all-projects") && DATA.projects) {
+    const p = DATA.projects;
+    $("all-projects").innerHTML =
+      `<h3 class="sub">${esc(t("proj.current"))}</h3>${p.filter((x) => x.active).map(projItem).join("")}` +
+      `<h3 class="sub">${esc(t("proj.past"))}</h3>${p.filter((x) => !x.active).map(projItem).join("")}`;
   }
-  const latest = document.getElementById("latest-pubs");
-  const all = document.getElementById("all-pubs");
-  const projs = document.getElementById("projects");
-  const projsAll = document.getElementById("all-projects");
-
-  if (latest || all) {
-    const map = await fetch("data/map.json", { cache: "no-cache" }).then((r) => r.json());
-    const pubs = [...map.mine].sort((a, b) => b.year - a.year);
-    // (the homepage's latest-papers list is drawn by story.js, so its bullets can catch the flying dots)
-    if (all) {
-      // the publications page lists papers only: journal articles and conference papers
-      all.innerHTML = pubs.filter((m) => m.kind === "article" || m.kind === "conference").map((m) => pubItem(m, map.background)).join("");
-      if (location.hash) document.querySelector(location.hash)?.scrollIntoView();
-    }
+  if ($("all-pubs") && DATA.map) {
+    // the publications page lists papers only: journal articles and conference papers
+    const pubs = [...DATA.map.mine].sort((a, b) => b.year - a.year).filter((m) => m.kind === "article" || m.kind === "conference");
+    $("all-pubs").innerHTML = pubs.map((m) => pubItem(m, DATA.map.background)).join("");
   }
-  if (projs || projsAll) {
-    const p = await fetch("data/projects.json", { cache: "no-cache" }).then((r) => r.json());
-    if (projs) projs.innerHTML = p.filter((x) => x.active).map(projItem).join("");
-    if (projsAll) projsAll.innerHTML =
-      `<h3 class="sub">Current</h3>${p.filter((x) => x.active).map(projItem).join("")}` +
-      `<h3 class="sub">Past</h3>${p.filter((x) => !x.active).map(projItem).join("")}`;
-  }
+  if ($("all-teaching") && DATA.teaching) $("all-teaching").innerHTML = DATA.teaching.map(teachItem).join("");
 }
-renderLists();
+ready.then(() => {
+  render();
+  if (location.hash) document.querySelector(location.hash)?.scrollIntoView();
+});
+window.addEventListener("langchange", render);

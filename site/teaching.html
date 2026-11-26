@@ -5,30 +5,32 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Teaching — Alenka Guček</title>
 <script>try { const t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
-<link rel="stylesheet" href="css/style.css?v=11">
+<link rel="stylesheet" href="css/style.css?v=12">
 </head>
 <body>
 <header class="nav"><div class="wrap">
   <a class="brand" href="index.html"><span class="mono">A·G</span> <span class="name">Alenka Guček</span></a>
   <nav>
-    <a class="link" href="projects.html">Projects</a>
-    <a class="link" href="publications.html">Publications</a>
-    <a class="link" href="teaching.html" aria-current="page">Teaching</a>
-    <button id="theme" type="button">Light</button>
+    <a class="link" href="projects.html" data-i18n="nav.projects">Projects</a>
+    <a class="link" href="publications.html" data-i18n="nav.publications">Publications</a>
+    <a class="link" href="teaching.html" aria-current="page" data-i18n="nav.teaching">Teaching</a>
+    <button id="lang" class="pill" type="button">SL</button>
+    <button id="theme" class="pill" type="button">Light</button>
   </nav>
 </div></header>
 <main class="wrap">
   <div class="page">
     <aside class="page-head">
-      <p class="kicker mono">03 · teaching</p>
-      <h1>Teaching</h1>
-      <p>I teach researchers how to turn data into clear figures, and teach professionals how to use AI responsibly. I am a guest lecturer at Uppsala University, where I have led a PhD course on data visualization since 2021.</p>
-      <a href="index.html">← back to the map</a>
+      <p class="kicker mono" data-i18n="teach.kicker">03 · teaching</p>
+      <h1 data-i18n="teach.h">Teaching</h1>
+      <p data-i18n="teach.p">Teaching is one of my favourite parts of the work. I give lectures, seminars and hands-on workshops on data visualization and trustworthy AI for researchers, students and professionals, and I am always glad to bring them to new groups. At Uppsala University I have led a PhD course on data visualization since 2021.</p>
+      <a href="index.html" data-i18n="back">← back to the map</a>
     </aside>
     <section id="all-teaching"></section>
   </div>
 </main>
-<footer><div class="wrap"><span>© 2026 Alenka Guček · Jožef Stefan Institute, Ljubljana</span><span><a href="mailto:alenka.gucek@ijs.si">Email</a> · <a href="https://scholar.google.com/citations?user=tJEwAjEAAAAJ" target="_blank" rel="noopener">Google Scholar</a> · <a href="https://www.researchgate.net/profile/Alenka-Gucek-2" target="_blank" rel="noopener">ResearchGate</a> · <a href="https://www.linkedin.com/in/alenkagucek/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://orcid.org/0000-0003-4453-1498" target="_blank" rel="noopener">ORCID</a></span></div></footer>
-<script src="js/site.js?v=11"></script>
+<footer><div class="wrap"><span data-i18n="footer">© 2026 Alenka Guček · Jožef Stefan Institute, Ljubljana</span><span><a href="mailto:alenka.gucek@ijs.si" data-i18n="email">Email</a> · <a href="https://scholar.google.com/citations?user=tJEwAjEAAAAJ" target="_blank" rel="noopener">Google Scholar</a> · <a href="https://www.researchgate.net/profile/Alenka-Gucek-2" target="_blank" rel="noopener">ResearchGate</a> · <a href="https://www.linkedin.com/in/alenkagucek/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://orcid.org/0000-0003-4453-1498" target="_blank" rel="noopener">ORCID</a></span></div></footer>
+<script src="js/i18n.js?v=12"></script>
+<script src="js/site.js?v=12"></script>
 </body>
 </html>
